@@ -1,0 +1,11 @@
+type UserActive {
+    id: ID!
+    username: String
+    role: String
+    date: String
+}
+
+type Query {
+    getUserActives: [UserActive]
+    getUserActivesByDate(date: String!): [UserActive]
+}

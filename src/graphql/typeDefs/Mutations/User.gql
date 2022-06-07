@@ -1,0 +1,24 @@
+type User {
+  id: ID
+  username: String
+  password: String
+  token: String
+  role: String
+}
+
+input userInput {
+  username: String!
+  password: String!
+}
+
+input setAdminInput {
+  id: ID
+  key: String
+  role: String
+}
+
+type Mutation {
+  register(input: userInput): User
+  login(input: userInput): User
+  setAdmin(input: setAdminInput): User
+}
