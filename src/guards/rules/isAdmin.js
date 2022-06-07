@@ -3,7 +3,7 @@ import { rule } from "graphql-shield";
 import { verifyToken } from "../../utils/index.js";
 import { UserModel } from "../../db/models/index.js";
 
-export const isAuthorized = rule()(async (parent, args, ctx, info) => {
+export const isAdmin = rule()(async (parent, args, ctx, info) => {
   const { authorization } = ctx.request.headers;
   if (!authorization) {
     return false;

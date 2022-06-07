@@ -1,1 +1,2 @@
-export * from "./isAuthorized.js";
+export * from "./isAdmin.js";
+export * from "./isLogged.js";

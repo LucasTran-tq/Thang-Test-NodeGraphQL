@@ -1,20 +1,19 @@
 import { shield } from "graphql-shield";
 
-import { isAuthorized } from './rules/index.js'
+import { isAdmin, isLogged } from './rules/index.js'
 
 export const permissions = shield({
   Query: {
-    // getUser: isAuthorized,
-    // getDog: isAuthorized,
-    getUsers: isAuthorized,
-    getDogs: isAuthorized,
-    getUserActives: isAuthorized,
-    getUserActivesByDate: isAuthorized,
-    getNewUsersByDate: isAuthorized
+    getUser: isLogged,
+    getUsers: isAdmin,
+    getUserActives: isAdmin,
+    getUserActivesByDate: isAdmin,
+    getNewUsersByDate: isAdmin
   },
   Mutation: {
-    deleteDog: isAuthorized,
-    addDog: isAuthorized,
-    updateDog: isAuthorized,
+    deleteUser: isAdmin,
+    addUser: isAdmin,
+    updateUser: isAdmin,
+    setAdmin: isLogged,
   },
 });

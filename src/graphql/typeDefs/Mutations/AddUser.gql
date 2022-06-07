@@ -1,0 +1,9 @@
+input addUserInput {
+    username: String!
+    password: String!
+    role: String!
+}
+
+type Mutation {
+    addUser(input: addUserInput): User
+}

@@ -1,3 +1,0 @@
-type Query {
-    getDog(id: ID!): Dog
-}
